@@ -1,5 +1,5 @@
 {
-    "name": "Shinchilka e-shop",
+    "name": "Shinchilka",
     "private": true,
     "description": "Shinchilka e-shop for Sergiy",
     "version": "0.1.0",
@@ -17,16 +17,16 @@
         "gatsby-source-filesystem": "^2.3.14",
         "gatsby-transformer-sharp": "^2.5.7",
         "lazysizes": "^5.2.2",
-        "prop-types": "^15.7.2",
-        "react": "^16.13.1",
-        "react-dom": "^16.13.1",
+        "prop-types": "^15.8.1",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
         "react-helmet": "^6.1.0",
-        "react-redux": "^7.2.0",
+        "react-redux": "^7.2.6",
         "react-swipeable-views": "^0.12.8",
-        "reactstrap": "^8.5.1",
-        "redux": "^4.0.5",
-        "redux-thunk": "^2.3.0",
-        "styled-components": "^5.1.1"
+        "reactstrap": "^9.0.1",
+        "redux": "^4.1.2",
+        "redux-thunk": "^2.4.1",
+        "styled-components": "^5.3.3"
     },
     "devDependencies": {
         "prettier": "2.0.5"
