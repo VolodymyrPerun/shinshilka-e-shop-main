@@ -24,7 +24,17 @@ const SliderImage = ({ src, alt }) => {
 
   const Image = styled(Img)`
     width: 100%;
-    height: 390px !important;
+    height: auto !important;
+    :after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      opacity: 0.5;
+      background: linear-gradient(315deg, #bea67c 0%, #000000 74%);
+    }
     @media (max-width: 576px) {
       height: 250px !important;
     }

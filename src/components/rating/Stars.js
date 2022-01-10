@@ -1,8 +1,7 @@
 import React from "react"
 import "./Stars.css"
-import { Link } from "gatsby"
 
-export default function Stars({ rating }) {
+export default function Stars({ rating, reviews }) {
   // total number of stars
   const starTotal = 5
   rating = rating ? rating : (Math.random() * (5 - 1)).toPrecision(2)
@@ -16,7 +15,7 @@ export default function Stars({ rating }) {
         ></div>
       </div>
       <span className="total_reviews">
-        <Link to="/">({Math.floor(Math.random() * (10 + 1)) + 1})</Link>
+        ({reviews ? reviews : Math.floor(Math.random() * (10 + 1)) + 1})
       </span>
     </div>
   )

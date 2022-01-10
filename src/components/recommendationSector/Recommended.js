@@ -28,7 +28,7 @@ export default function Products({ title }) {
 
   return (
     <Container style={{ marginTop: "40px" }}>
-      <Heading>{title ? title : "You may Also Like"} </Heading>
+      <Heading>{title ? title : "Також вас може зацікавити"} </Heading>
       <Row>
         {items.map(item => (
           <ProductCard

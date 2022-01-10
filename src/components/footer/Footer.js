@@ -9,73 +9,52 @@ export default function Footer() {
     <footer className="footer-section">
       <Container>
         <Row>
-          <Col lg="4">
+          <Col lg="6" md="6">
             <div className="footer-left">
               <div className="footer-logo">
                 <Link to="/" className="navbar-brand text-light">
-                  <span>e</span>-shop
+                  <span>Shin</span>shilka
                 </Link>
               </div>
               <ul>
                 <li>
-                  <i className="fa fa-map-marker"></i> 60-49 Road 11378 Nairobi
+                  <i className="fa fa-map-marker"></i> Комарно, Львівська область
                 </li>
                 <li>
                   <i className="fa fa-phone"></i>{" "}
-                  <a href="tel:+254 746792699">+254 746792699</a>
+                  <a href="tel:+380671932678">+380671932678</a> (Viber)
                 </li>
                 <li>
                   <i className="fa fa-envelope"></i>{" "}
                   <a href="mailto:muriithijames556@gmail.com">
-                    muriithijames556@gmail.com
+                    sergeymouchurad@gmail.com
                   </a>
                 </li>
               </ul>
               <div className="footer-social">
-                <Link to="/">
+                <Link to="https://www.facebook.com/profile.php?id=100026023871482" target='_blank'>
                   <i className="fa fa-facebook"></i>
                 </Link>
-                <Link to="/">
+                <Link to="https://www.instagram.com/sergiimochurad/" target='_blank'>
                   <i className="fa fa-instagram"></i>
-                </Link>
-                <Link to="/">
-                  <i className="fa fa-twitter"></i>
-                </Link>
-                <Link to="/">
-                  <i className="fa fa-pinterest"></i>
                 </Link>
               </div>
             </div>
           </Col>
-          <Col lg="4">
+          <Col md="6" lg="6">
             <div className="footer-widget">
-              <h5>Sitemap</h5>
+              <h5>Карта сайту</h5>
               <ul>
                 <li>
-                  <Link to="/">Home</Link>
+                  <Link to="/">Головна</Link>
                 </li>
                 <li>
-                  <Link to="/">Contact</Link>
+                  <Link to="/Contact">Контакти</Link>
                 </li>
                 <li>
-                  <Link to="/">Shopping Cart</Link>
-                </li>
-                <li>
-                  <Link to="/">About Us</Link>
+                  <Link to="/About">Про Нас</Link>
                 </li>
               </ul>
-            </div>
-          </Col>
-          <Col lg="4">
-            <div className="newslatter-item">
-              <h5>Join Our Newsletter Now</h5>
-              <p>
-                Get E-mail updates about our latest shop and special offers.
-              </p>
-              <form action="#" className="subscribe-form">
-                <input type="email" placeholder="Enter Your Mail" />
-                <button className="btn">Subscribe</button>
-              </form>
             </div>
           </Col>
         </Row>
@@ -85,7 +64,8 @@ export default function Footer() {
           <div className="row">
             <div className="col-lg-12">
               <div className="copyright-text">
-                Copyright © {new Date().getFullYear()} All rights reserved
+                Copyright © {new Date().getFullYear()} All rights reserved. Developed by:
+                <a className="copyright-email" href="mailto:volodimirperun007@gmail.com"> volodimirperun007@gmail.com</a>
               </div>
             </div>
           </div>

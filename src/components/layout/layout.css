@@ -11,6 +11,7 @@ body {
     font-family: "Muli", sans-serif;
     -webkit-font-smoothing: antialiased;
     font-smoothing: antialiased;
+    background: url("../../images/main_bg.png") center top /cover;
 }
 
 .navbar-brand {

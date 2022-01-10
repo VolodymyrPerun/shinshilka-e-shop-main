@@ -1,5 +1,14 @@
 .product-item {
+    opacity: 0.9;
+    margin-top: 40px;
     margin-bottom: 26px;
+    transition: all 0.3s;
+}
+
+.product-item:hover {
+    transform: scale(1.2);
+    opacity: 1;
+    z-index: 7;
 }
 
 .product-item:hover .pi-pic .icon {
@@ -17,7 +26,14 @@
 }
 
 .product-item .pi-pic img {
+    height: auto;
     min-width: 100%;
+    padding: 5px 5px 0;
+    background-color: #E7AB3C;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
+    -moz-box-shadow: 0 1px 2px rgba(34,25,25,0.4);
+    -webkit-box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
 }
 
 .product-item .pi-pic .sale {
@@ -25,8 +41,9 @@
     font-size: 10px;
     background: #76BC42;
     position: absolute;
-    left: 0;
+    left: 5px;
     top: 20px;
+    border-radius: 2px;
     padding: 5px 10px;
     text-transform: uppercase;
 }
@@ -103,8 +120,21 @@
     display: block;
 }
 
-.product-item .pi-text a h5 {
+.product-item .pi-text h3 {
+    margin-top: 10px;
+    font-size: 18px;
     color: #252525;
+}
+
+.product-item .pi-text a h5 {
+    font-size: 22px;
+    color: #252525;
+}
+
+.product-item .pi-text h6 {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #76BC42;
 }
 
 .product-item .pi-text .product-price {

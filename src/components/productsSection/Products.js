@@ -1,9 +1,9 @@
 import React from "react"
 import { Container, Row } from "reactstrap"
-import ProductCard from "../productCard/ProductCard"
 import styled from "styled-components"
 
-import { items } from "../../data";
+import { items, items2, items3 } from "../../data"
+import ProductCard from "../productCard/ProductCard"
 
 export default function Products() {
   const Heading = styled.h3`
@@ -27,20 +27,52 @@ export default function Products() {
   `
 
   return (
-    <Container style={{ marginTop: "40px" }}>
-      <Heading>Clothing</Heading>
-      <Row>
-        {items.map(item => (
-          <ProductCard
-            key={item.id}
-            product={item}
-            lg="3"
-            md="4"
-            sm="6"
-            xs="6"
-          />
-        ))}
-      </Row>
-    </Container>
+    <>
+      <Container style={{ marginTop: "40px" }}>
+        <Heading>Товари для гризунів</Heading>
+        <Row>
+          {items.map(item => (
+            <ProductCard
+              key={item.id}
+              product={item}
+              lg="3"
+              md="4"
+              sm="6"
+              xs="6"
+            />
+          ))}
+        </Row>
+      </Container>
+      <Container style={{ marginTop: "40px" }}>
+        <Heading>Товари для собак та кішок</Heading>
+        <Row>
+          {items2.map(item => (
+            <ProductCard
+              key={item.id}
+              product={item}
+              lg="3"
+              md="4"
+              sm="6"
+              xs="6"
+            />
+          ))}
+        </Row>
+      </Container>
+      <Container style={{ marginTop: "40px" }}>
+        <Heading>Аксесуари</Heading>
+        <Row>
+          {items3.map(item => (
+            <ProductCard
+              key={item.id}
+              product={item}
+              lg="3"
+              md="4"
+              sm="6"
+              xs="6"
+            />
+          ))}
+        </Row>
+      </Container>
+    </>
   )
 }

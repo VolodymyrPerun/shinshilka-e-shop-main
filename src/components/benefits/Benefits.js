@@ -13,8 +13,8 @@ export default function Benefits() {
               <img src={require("../../images/icons/icon-1.png")} alt="" />
             </div>
             <div className="sb-text">
-              <h6>Free Shipping</h6>
-              <p>For all order over Ksh. 999</p>
+              <h6>Доставка</h6>
+              <p>Доставка Новою Поштою</p>
             </div>
           </div>
         </Col>
@@ -24,8 +24,8 @@ export default function Benefits() {
               <img src={require("../../images/icons/icon-2.png")} alt="" />
             </div>
             <div className="sb-text">
-              <h6>Delivery On Time</h6>
-              <p>Fast delivery of goods</p>
+              <h6>Термін виготовлення</h6>
+              <p>Завжди вчасно і без затримок</p>
             </div>
           </div>
         </Col>
@@ -35,8 +35,8 @@ export default function Benefits() {
               <img src={require("../../images/icons/icon-3.png")} alt="" />
             </div>
             <div className="sb-text">
-              <h6>Secure Payment</h6>
-              <p>100% secure payment</p>
+              <h6>Оплата</h6>
+              <p>Оплата карточками або наложеним платежем</p>
             </div>
           </div>
         </Col>

@@ -35,3 +35,8 @@
     color: #252525;
     line-height: 20px;
 }
+
+.benefit-items .single-benefit {
+    border-right: none;
+    border-bottom: none;
+}

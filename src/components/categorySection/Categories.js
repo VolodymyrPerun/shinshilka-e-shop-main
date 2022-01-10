@@ -11,7 +11,7 @@ export default function Categories() {
             <div className="single-banner">
               <img src={require("../../images/banner-1.jpg")} alt="" />
               <div className="inner-text">
-                <h4>Men’s</h4>
+                <h4>Собачки та кішки</h4>
               </div>
             </div>
           </Col>
@@ -19,7 +19,7 @@ export default function Categories() {
             <div className="single-banner">
               <img src={require("../../images/banner-2.jpg")} alt="" />
               <div className="inner-text">
-                <h4>Women’s</h4>
+                <h4>Гризуни</h4>
               </div>
             </div>
           </Col>
@@ -27,7 +27,7 @@ export default function Categories() {
             <div className="single-banner">
               <img src={require("../../images/banner-3.jpg")} alt="" />
               <div className="inner-text">
-                <h4>Kid’s</h4>
+                <h4>Пташки</h4>
               </div>
             </div>
           </Col>
