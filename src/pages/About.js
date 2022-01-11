@@ -5,17 +5,17 @@ import { Provider } from 'react-redux'
 import Layout from '../components/layout'
 import Footer from '../components/footer/Footer'
 import Navbar from '../components/navbar/Navbar'
-import Contacts from '../components/contactsSection/Contacts'
+import AboutUs from '../components/aboutSection/About'
 //
 import store from '../store'
 
-const Contact = () => {
+const About = () => {
   return (
     <>
       <Provider store={store}>
         <div style={{ overflowX: 'hidden' }}>
           <Navbar/>
-          <Contacts/>
+          <AboutUs/>
           <Footer/>
         </div>
       </Provider>
@@ -27,5 +27,5 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default Contact
+export default About
 

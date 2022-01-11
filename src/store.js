@@ -1,15 +1,15 @@
-import { applyMiddleware, compose, createStore } from "redux"
-import thunk from "redux-thunk"
-
-import rootReducer from "./reducers"
+import thunk from 'redux-thunk'
+import { applyMiddleware, compose, createStore } from 'redux'
+//
+import rootReducer from './reducers'
 
 let initialState = {}
 const middleware = [thunk]
-const globalWindow = typeof window !== "undefined" && window
+const globalWindow = typeof window !== 'undefined' && window
 
 if (globalWindow) {
-  initialState = localStorage.getItem("myCart")
-    ? JSON.parse(localStorage.getItem("myCart"))
+  initialState = localStorage.getItem('myCart')
+    ? JSON.parse(localStorage.getItem('myCart'))
     : initialState
 }
 
@@ -23,7 +23,7 @@ const store = createStore(
 )
 
 store.subscribe(() => {
-  localStorage.setItem("myCart", JSON.stringify(store.getState()))
+  localStorage.setItem('myCart', JSON.stringify(store.getState()))
 })
 
 export default store

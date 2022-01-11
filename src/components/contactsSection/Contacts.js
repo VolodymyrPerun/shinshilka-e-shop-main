@@ -1,23 +1,23 @@
-import React from "react"
-import styled from "styled-components"
+import React from 'react'
+import styled from 'styled-components'
 
 export default function Contacts() {
   const Heading = styled.h3`
-    font-size: 22px;
     color: #171717;
+    font-size: 22px;
     margin-right: 22px;
     position: relative;
     padding-bottom: 20px;
     padding-left: 20px;
     &:before {
-      opacity: 1;
-      position: absolute;
       left: 0;
-      bottom: -3px;
+      opacity: 1;
       width: auto;
+      content: '';
       height: 2px;
+      bottom: -3px;
+      position: absolute;
       background: #171717;
-      content: "";
     }
   `
   const Info = styled.ul`
@@ -32,30 +32,28 @@ export default function Contacts() {
 
 
     <div style={{
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "center",
-      alignItems: "center",
-      minHeight: "60vh"
+      display: 'flex',
+      minHeight: '60vh',
+      alignItems: 'center',
+      flexDirection: 'column',
+      justifyContent: 'center',
     }}>
       <Heading>Контактна інформація: </Heading>
       <Info className={Info}>
         <li>
-          <i className="fa fa-map-marker"></i> Комарно, Львівська область
+          <i className='fa fa-map-marker'></i> Комарно, Львівська область
         </li>
         <li>
-          <i className="fa fa-phone"></i>{" "}
-          <a href="tel:+380671932678">+380671932678</a> (Viber)
+          <i className='fa fa-phone'></i>{' '}
+          <a href='tel:+380671932678'>+380671932678</a> (Viber)
         </li>
         <li>
-          <i className="fa fa-envelope"></i>{" "}
-          <a href="mailto:muriithijames556@gmail.com">
+          <i className='fa fa-envelope'></i>{' '}
+          <a href='mailto:muriithijames556@gmail.com'>
             sergeymouchurad@gmail.com
           </a>
         </li>
       </Info>
     </div>
-
-
   )
 }

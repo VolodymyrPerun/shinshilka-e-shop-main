@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 import { Provider } from 'react-redux'
 //
 import Layout from '../components/layout'
-import Footer from '../components/footer/Footer'
 import Navbar from '../components/navbar/Navbar'
-import Contacts from '../components/contactsSection/Contacts'
+import Footer from '../components/footer/Footer'
+import SelectedSection from '../components/selectedSection/selectedSection'
 //
 import store from '../store'
 
@@ -15,7 +15,7 @@ const Contact = () => {
       <Provider store={store}>
         <div style={{ overflowX: 'hidden' }}>
           <Navbar/>
-          <Contacts/>
+          <SelectedSection/>
           <Footer/>
         </div>
       </Provider>
