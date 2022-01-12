@@ -1,11 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import styled from 'styled-components'
 import { Container, Row } from 'reactstrap'
-//
-import ProductCard from '../productCard/ProductCard'
+import styled from 'styled-components'
 //
 import { toggleProduct } from '../../actions/productActions'
+//
+import ProductCard from '../productCard/ProductCard'
 
 const Products = ({ title, product, toggleProduct }) => {
   const Heading = styled.h3`
@@ -29,9 +29,10 @@ const Products = ({ title, product, toggleProduct }) => {
   `
 
   return (
-    <Container style={{ marginTop: '40px' }}>
-      <Heading>{title ? title : 'Останній переглянутий товар'} </Heading>
-      <Row>
+    <>
+      {!!product && <Container style={{ marginTop: '40px' }}>
+        <Heading>{title ? title : 'Останній переглянутий товар'} </Heading>
+        <Row>
           <ProductCard
             lg='2'
             md='4'
@@ -40,8 +41,9 @@ const Products = ({ title, product, toggleProduct }) => {
             product={product}
             addProduct={toggleProduct}
           />
-      </Row>
-    </Container>
+        </Row>
+      </Container>}
+    </>
   )
 }
 
