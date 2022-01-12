@@ -1,10 +1,11 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import styled from 'styled-components'
 import { Container, Row } from 'reactstrap'
 //
 import ProductCard from '../productCard/ProductCard'
 
-export default function SelectedSection() {
+const SelectedSection = ({ wishlistItems })  => {
   const Heading = styled.h3`
     font-size: 20px;
     color: #171717;
@@ -24,8 +25,6 @@ export default function SelectedSection() {
       background: #171717;
     }
   `
-  const storage = JSON.parse(localStorage.getItem('myCart'))
-  const wishlistItems = storage?.wishlist?.wishlistItems
 
   return (
     <Container style={{ marginTop: '40px' }}>
@@ -39,7 +38,7 @@ export default function SelectedSection() {
       }}>
         <Heading>Вибрані товари</Heading>
       </div>
-      {!!wishlistItems.length > 0
+      {wishlistItems?.length > 0
         ? <Row>
           {wishlistItems.map(item => (
             <ProductCard
@@ -64,3 +63,11 @@ export default function SelectedSection() {
     </Container>
   )
 }
+
+const mapStateToProps = state => {
+  return {
+    wishlistItems: state.wishlist.wishlistItems,
+  }
+}
+
+export default connect(mapStateToProps, {})(SelectedSection)

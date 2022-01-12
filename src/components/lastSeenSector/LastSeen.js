@@ -4,11 +4,10 @@ import styled from 'styled-components'
 import { Container, Row } from 'reactstrap'
 //
 import ProductCard from '../productCard/ProductCard'
-import { recommendedItems as items } from '../../data'
 //
 import { toggleProduct } from '../../actions/productActions'
 
-const Products = ({ title, toggleProduct }) => {
+const Products = ({ title, product, toggleProduct }) => {
   const Heading = styled.h3`
     color: #171717;
     cursor: pointer;
@@ -31,22 +30,26 @@ const Products = ({ title, toggleProduct }) => {
 
   return (
     <Container style={{ marginTop: '40px' }}>
-      <Heading>{title ? title : 'Також вас може зацікавити'} </Heading>
+      <Heading>{title ? title : 'Останній переглянутий товар'} </Heading>
       <Row>
-        {items.map(item => (
           <ProductCard
             lg='2'
             md='4'
             sm='6'
             xs='6'
-            key={item.id}
-            product={item}
+            key={product.id}
+            product={product}
             addProduct={toggleProduct}
           />
-        ))}
       </Row>
     </Container>
   )
 }
 
-export default connect(null, { toggleProduct })(Products)
+const mapStateToProps = state => {
+  return {
+    product: state.product.product,
+  }
+}
+
+export default connect(mapStateToProps, { toggleProduct })(Products)

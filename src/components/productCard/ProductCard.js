@@ -1,55 +1,54 @@
-import React from "react"
-import { Col } from "reactstrap"
-import { Link } from "gatsby"
-import "lazysizes"
-import "lazysizes/plugins/attrchange/ls.attrchange"
-import "lazysizes/plugins/parent-fit/ls.parent-fit"
-import { connect } from "react-redux"
+import 'lazysizes'
+import React from 'react'
+import { Link } from 'gatsby'
+import { Col } from 'reactstrap'
+import 'lazysizes/plugins/attrchange/ls.attrchange'
+import 'lazysizes/plugins/parent-fit/ls.parent-fit'
+//
+import Stars from '../rating/Stars'
+import Like from '../favourite/Like'
+import preImage from '../../images/products/preImage.webp'
+//
+import './ProductCard.css'
 
-import "./ProductCard.css"
-import Like from "../favourite/Like"
-import Stars from "../rating/Stars"
-import { addToCart } from "../../actions/cartActions"
-import preImage from "../../images/products/preImage.webp"
-
-function ProductCard({ product, addToCart, ...props }) {
+function ProductCard({ product, addProduct, ...props }) {
 
   return (
     <Col {...props}>
-      <div className="product-item">
-        <div className="pi-pic">
+      <div className='product-item'>
+        <div className='pi-pic'>
           <img
-            data-src={product.src}
-            alt={product.name}
             src={preImage}
-            className="lazyload"
+            alt={product.name}
+            className='lazyload'
+            data-src={product.src}
           />
-          {product.label && <div className="sale">{product.label}</div>}
-          <div className="icon like">
-            <Like product={product} />
+          {product.label && <div className='sale'>{product.label}</div>}
+          <div className='icon like'>
+            <Like product={product}/>
           </div>
           <ul>
-            <li className="w-icon">
-              <Link to="#" aria-label="share">
-                <i className="fa fa-share"></i>
+            <li className='w-icon'>
+              <Link to='/Product' onClick={() => addProduct(product)} aria-label='share'>
+                <i className='fa fa-share'/>
               </Link>
             </li>
           </ul>
         </div>
-        <div className="pi-text">
-          <Link to="#" style={{minHeight: "42px"}} className="d-flex align-items-center">
+        <div className='pi-text'>
+          <Link to='/Product' onClick={() => addProduct(product)} style={{ minHeight: '42px' }} className='d-flex align-items-center'>
             <h5>{product.name}</h5>
           </Link>
-          <div className="ratings">
-            <Stars rating={product.rating} reviews={product.reviews} />
+          <div className='ratings'>
+            <Stars rating={product.rating} reviews={product.reviews}/>
           </div>
           {product.description && <h6>Розмір: {product.description}</h6>}
-          <div className="product-price">Ціна: {product.price} грн.</div>
-          <h3>Код: {product.id < 10 ? '0' + product.id: product.id}</h3>
+          <div className='product-price'>Ціна: {product.price} грн.</div>
+          <h3>Код: {product.id < 10 ? '0' + product.id : product.id}</h3>
         </div>
       </div>
     </Col>
   )
 }
 
-export default connect(null, { addToCart })(ProductCard)
+export default ProductCard

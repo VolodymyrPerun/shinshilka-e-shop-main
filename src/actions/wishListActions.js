@@ -1,4 +1,4 @@
-import { TOGGLE_TO_WISHLIST } from "./types"
+import { TOGGLE_TO_WISHLIST } from './types'
 
 export const toggleWishlist = item => dispatch => {
     dispatch({

@@ -5,13 +5,13 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
-import Helmet from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import { graphql, useStaticQuery } from 'gatsby'
+import PropTypes from 'prop-types'
+import React from 'react'
+import Helmet from 'react-helmet'
 
-import Facebook from "./Facebook"
-import Twitter from "./Twitter"
+import Facebook from './Facebook'
+import Twitter from './Twitter'
 
 const SEO = ({ title, desc, banner, pathname, article, node }) => {
   const { site } = useStaticQuery(query)
@@ -35,12 +35,12 @@ const SEO = ({ title, desc, banner, pathname, article, node }) => {
     title: title || defaultTitle,
     description: desc || defaultDescription,
     image: banner || `${siteUrl}${defaultBanner}`,
-    url: `${siteUrl}${pathname || ""}`,
+    url: `${siteUrl}${pathname || ''}`,
   }
 
   const schemaOrgWebPage = {
-    "@context": "http://schema.org",
-    "@type": "WebPage",
+    '@context': 'http://schema.org',
+    '@type': 'WebPage',
     url: siteUrl,
     headline,
     inLanguage: siteLanguage,
@@ -48,36 +48,36 @@ const SEO = ({ title, desc, banner, pathname, article, node }) => {
     description: defaultDescription,
     name: defaultTitle,
     author: {
-      "@type": "Person",
+      '@type': 'Person',
       name: author,
     },
     copyrightHolder: {
-      "@type": "Person",
+      '@type': 'Person',
       name: author,
     },
-    copyrightYear: "2020",
+    copyrightYear: '2020',
     creator: {
-      "@type": "Person",
+      '@type': 'Person',
       name: author,
     },
     publisher: {
-      "@type": "Person",
+      '@type': 'Person',
       name: author,
     },
-    datePublished: "2020-03-12T10:30:00+05:30",
+    datePublished: '2020-03-12T10:30:00+05:30',
     dateModified: buildTime,
     image: {
-      "@type": "ImageObject",
+      '@type': 'ImageObject',
       url: `${siteUrl}${defaultBanner}`,
     },
   }
 
   const itemListElement = [
     {
-      "@type": "ListItem",
+      '@type': 'ListItem',
       item: {
-        "@id": siteUrl,
-        name: "Homepage",
+        '@id': siteUrl,
+        name: 'Homepage',
       },
       position: 1,
     },
@@ -87,26 +87,26 @@ const SEO = ({ title, desc, banner, pathname, article, node }) => {
 
   if (article) {
     schemaArticle = {
-      "@context": "http://schema.org",
-      "@type": "Article",
+      '@context': 'http://schema.org',
+      '@type': 'Article',
       author: {
-        "@type": "Person",
+        '@type': 'Person',
         name: author,
       },
       copyrightHolder: {
-        "@type": "Person",
+        '@type': 'Person',
         name: author,
       },
-      copyrightYear: "2020",
+      copyrightYear: '2020',
       creator: {
-        "@type": "Person",
+        '@type': 'Person',
         name: author,
       },
       publisher: {
-        "@type": "Organization",
+        '@type': 'Organization',
         name: author,
         logo: {
-          "@type": "ImageObject",
+          '@type': 'ImageObject',
           url: `${siteUrl}${defaultBanner}`,
         },
       },
@@ -118,16 +118,16 @@ const SEO = ({ title, desc, banner, pathname, article, node }) => {
       url: seo.url,
       name: seo.title,
       image: {
-        "@type": "ImageObject",
+        '@type': 'ImageObject',
         url: seo.image,
       },
       mainEntityOfPage: seo.url,
     }
     // Push current blogpost into breadcrumb list
     itemListElement.push({
-      "@type": "ListItem",
+      '@type': 'ListItem',
       item: {
-        "@id": seo.url,
+        '@id': seo.url,
         name: seo.title,
       },
       position: 2,
@@ -135,20 +135,20 @@ const SEO = ({ title, desc, banner, pathname, article, node }) => {
   }
 
   const breadcrumb = {
-    "@context": "http://schema.org",
-    "@type": "BreadcrumbList",
+    '@context': 'http://schema.org',
+    '@type': 'BreadcrumbList',
     description:
-      "Your favorite online shop.",
-    name: "E-Shop",
+      'Your favorite online shop.',
+    name: 'E-Shop',
     itemListElement,
   }
 
   return (
     <>
       <Helmet title={seo.title}>
-        <html lang={siteLanguage} />
-        <meta name="description" content={seo.description} />
-        <meta name="image" content={seo.image} />
+        <html lang={siteLanguage}/>
+        <meta name="description" content={seo.description}/>
+        <meta name="image" content={seo.image}/>
         {/* Insert schema.org data conditionally (webpage/article) + everytime (breadcrumbs) */}
         {!article && (
           <script type="application/ld+json">
@@ -166,7 +166,7 @@ const SEO = ({ title, desc, banner, pathname, article, node }) => {
         desc={seo.description}
         image={seo.image}
         title={seo.title}
-        type={article ? "article" : "website"}
+        type={article ? 'article' : 'website'}
         url={seo.url}
         locale={ogLanguage}
         name={facebook}
@@ -182,8 +182,8 @@ const SEO = ({ title, desc, banner, pathname, article, node }) => {
 }
 
 SEO.defaultProps = {
-  title: `E-shop - Your favorite online shop`,
-  desc: `Your favorite online shop.`,
+  title: `Shinshilka - інтернет зоомагазин "Шиншилка" Ви зможете підібрати клітку вітрину для середніх і великих гризунів, а також для фретки (тхорів) за найнижчою ціною та аксесуари до них.`,
+  desc: `У нашому інтернет зоомагазині "Шиншилка" Ви зможете підібрати клітку вітрину для середніх і великих гризунів, а також для фретки (тхорів) за найнижчою ціною та аксесуари до них..`,
   banner: `/preview.png`,
   pathname: null,
   article: false,
