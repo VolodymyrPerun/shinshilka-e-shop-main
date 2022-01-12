@@ -41,14 +41,14 @@ export default function Contacts() {
       <Heading>Контактна інформація: </Heading>
       <Info className={Info}>
         <li>
-          <i className='fa fa-map-marker'></i> Комарно, Львівська область
+          <i className='fa fa-map-marker'/> Комарно, Львівська область
         </li>
         <li>
-          <i className='fa fa-phone'></i>{' '}
+          <i className='fa fa-phone'/>{' '}
           <a href='tel:+380671932678'>+380671932678</a> (Viber)
         </li>
         <li>
-          <i className='fa fa-envelope'></i>{' '}
+          <i className='fa fa-envelope'/>{' '}
           <a href='mailto:muriithijames556@gmail.com'>
             sergeymouchurad@gmail.com
           </a>

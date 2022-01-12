@@ -1,30 +1,23 @@
-import React, { useState } from "react"
-import {
-  Carousel,
-  CarouselItem,
-  CarouselControl,
-  CarouselIndicators,
-  CarouselCaption,
-  Row,
-  Col,
-} from "reactstrap"
-import Image from "./SliderImage"
+import React, { useState } from 'react'
+import { Carousel, CarouselCaption, CarouselControl, CarouselIndicators, CarouselItem, Col, Row } from 'reactstrap'
+//
+import Image from './SliderImage'
 
 const items = [
   {
-    src: "slider01.jpg",
-    altText: "Slide 1",
-    sliderTitle: "У нашому інтернет зоомагазині \"Шиншилка\" Ви зможете підібрати клітку вітрину для середніх і великих гризунів, а також для фретки (тхорів) за найнижчою ціною та аксесуари до них."
+    src: 'slider01.jpg',
+    altText: 'Slide 1',
+    sliderTitle: 'У нашому інтернет зоомагазині "Шиншилка" Ви зможете підібрати клітку вітрину для середніх і великих гризунів, а також для фретки (тхорів) за найнижчою ціною та аксесуари до них.',
   },
   {
-    src: "slider02.jpg",
-    altText: "Slide 2",
-    sliderTitle: 'На нашому сайті представлені як універсальні клітки для шиншил, білок, дегу, декоративних кроликів, морських свинок та інших гризунів або фретки (тхорів), так і такі, які призначені для пташок, кішок та собак.'
+    src: 'slider02.jpg',
+    altText: 'Slide 2',
+    sliderTitle: 'На нашому сайті представлені як універсальні клітки для шиншил, білок, дегу, декоративних кроликів, морських свинок та інших гризунів або фретки (тхорів), так і такі, які призначені для пташок, кішок та собак.',
   },
   {
-    src: "slider03.jpg",
-    altText: "Slide 3",
-    sliderTitle: 'Підбір вдалого житла для Вашого кролика, шиншили або фретки є дуже важливим етапом, так як воно повинно підходити не тільки Вашому вихованцеві, але і гармонійно вписуються в інтер\'єр.'
+    src: 'slider03.jpg',
+    altText: 'Slide 3',
+    sliderTitle: 'Підбір вдалого житла для Вашого кролика, шиншили або фретки є дуже важливим етапом, так як воно повинно підходити не тільки Вашому вихованцеві, але і гармонійно вписуються в інтер\'єр.',
   },
 ]
 
@@ -56,15 +49,15 @@ const HomeCarousel = props => {
         onExited={() => setAnimating(false)}
         key={item.src}
       >
-        <Image src={item.src} alt={item.altText} />
-        <CarouselCaption captionText={item.sliderTitle} />
+        <Image src={item.src} alt={item.altText}/>
+        <CarouselCaption captionText={item.sliderTitle}/>
       </CarouselItem>
     )
   })
 
   return (
-    <Row className="px-1">
-      <Col style={{zIndex: 1}}>
+    <Row className='px-1'>
+      <Col style={{ zIndex: 1 }}>
         <Carousel activeIndex={activeIndex} next={next} previous={previous}>
           <CarouselIndicators
             items={items}
@@ -73,13 +66,13 @@ const HomeCarousel = props => {
           />
           {slides}
           <CarouselControl
-            direction="prev"
-            directionText=" "
+            direction='prev'
+            directionText=' '
             onClickHandler={previous}
           />
           <CarouselControl
-            direction="next"
-            directionText=" "
+            direction='next'
+            directionText=' '
             onClickHandler={next}
           />
         </Carousel>

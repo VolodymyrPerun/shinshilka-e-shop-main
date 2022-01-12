@@ -51,9 +51,9 @@ const SliderImage = ({ src, alt }) => {
   return (
     <Image
       alt={alt}
+      objectFit='contain'
+      objectPosition='50% 50%'
       fluid={image.node.childImageSharp.fluid}
-      objectFit="contain"
-      objectPosition="50% 50%"
     />
   )
 }

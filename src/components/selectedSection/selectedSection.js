@@ -2,10 +2,11 @@ import React from 'react'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 import { Container, Row } from 'reactstrap'
+import { toggleProduct } from '../../actions/productActions'
 //
 import ProductCard from '../productCard/ProductCard'
 
-const SelectedSection = ({ wishlistItems })  => {
+const SelectedSection = ({ wishlistItems, toggleProduct })  => {
   const Heading = styled.h3`
     font-size: 20px;
     color: #171717;
@@ -48,6 +49,7 @@ const SelectedSection = ({ wishlistItems })  => {
               xs='6'
               key={item.id}
               product={item}
+              addProduct={toggleProduct}
             />
           ))}
         </Row>
@@ -70,4 +72,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {})(SelectedSection)
+export default connect(mapStateToProps, { toggleProduct })(SelectedSection)
