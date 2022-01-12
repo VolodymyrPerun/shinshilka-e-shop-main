@@ -1,9 +1,9 @@
-import React, { Component } from "react"
-import PropTypes from "prop-types"
-import SwipeableViews from "react-swipeable-views"
+import PropTypes from 'prop-types'
+import React, { Component } from 'react'
+import SwipeableViews from 'react-swipeable-views'
 
-import HeightUpdater from "./HeightUpdater"
-import ScrollToTop from "./ScrollToTop"
+import HeightUpdater from './HeightUpdater'
+import ScrollToTop from './ScrollToTop'
 
 class SwipeableBottomSheet extends Component {
   constructor(props) {
@@ -12,7 +12,7 @@ class SwipeableBottomSheet extends Component {
     this.onHeightChange = this.onHeightChange.bind(this)
     this.onChangeIndex = this.onChangeIndex.bind(this)
     this.onTransitionEnd = this.onTransitionEnd.bind(this)
-    this.globalWindow = typeof window !== "undefined" && window
+    this.globalWindow = typeof window !== 'undefined' && window
 
     this.state = {
       open: props.defaultOpen,
@@ -67,7 +67,7 @@ class SwipeableBottomSheet extends Component {
     const styles = {
       root: {
         height: overflowHeight,
-        position: "fixed",
+        position: 'fixed',
         bottom: 0,
         right: 0,
         left: 0,
@@ -75,21 +75,21 @@ class SwipeableBottomSheet extends Component {
       },
       swiper: {
         root: {
-          overflowY: "initial",
-          boxSizing: "border-box",
+          overflowY: 'initial',
+          boxSizing: 'border-box',
           ...swipeableViewsProps.style,
         },
         container: {
-          boxSizing: "border-box",
+          boxSizing: 'border-box',
           ...(topShadow &&
             !hideShadows && {
-              boxShadow: "rgba(0, 0, 0, 0.156863) 0px -6px 5px",
+              boxShadow: 'rgba(0, 0, 0, 0.156863) 0px -6px 5px',
             }),
           ...swipeableViewsProps.containerStyle,
         },
         slide: {
-          boxSizing: "border-box",
-          overflow: "visible",
+          boxSizing: 'border-box',
+          overflow: 'visible',
           marginBottom: -overflowHeight,
           ...swipeableViewsProps.slideStyle,
         },
@@ -97,38 +97,38 @@ class SwipeableBottomSheet extends Component {
           marginBottom: overflowHeight,
         },
         body: {
-          overflow: isOpen ? "auto" : "hidden",
-          backgroundColor: "white",
-          height: fullScreen ? maxHeight : "initial",
+          overflow: isOpen ? 'auto' : 'hidden',
+          backgroundColor: 'white',
+          height: fullScreen ? maxHeight : 'initial',
           maxHeight: maxHeight,
           ...this.props.bodyStyle,
         },
       },
       overlay: {
-        position: "fixed",
+        position: 'fixed',
         top: 0,
         right: 0,
         left: 0,
         height: this.state.height,
-        transition: "opacity 450ms",
-        pointerEvents: "none",
-        backgroundColor: "black",
+        transition: 'opacity 450ms',
+        pointerEvents: 'none',
+        backgroundColor: 'black',
         opacity: 0,
         ...(isOpen && {
           opacity: 0.54,
-          pointerEvents: "auto",
+          pointerEvents: 'auto',
         }),
         ...this.props.overlayStyle,
       },
       shadowTip: {
-        position: "fixed",
+        position: 'fixed',
         height: 60,
-        width: "200%",
+        width: '200%',
         bottom: -60,
-        left: "-50%",
-        boxShadow: "rgba(0, 0, 0, 0.7) 0px 0px 30px",
-        transition: "transform 450ms",
-        transform: isOpen ? "translateY(50px)" : "translateY(0)",
+        left: '-50%',
+        boxShadow: 'rgba(0, 0, 0, 0.7) 0px 0px 30px',
+        transition: 'transform 450ms',
+        transform: isOpen ? 'translateY(50px)' : 'translateY(0)',
       },
     }
 
@@ -139,33 +139,33 @@ class SwipeableBottomSheet extends Component {
           onHeightChange={this.onHeightChange}
         />
         {overlay && (
-          <div style={styles.overlay} onClick={() => this.onChangeIndex(0)} />
+          <div style={styles.overlay} onClick={() => this.onChangeIndex(0)}/>
         )}
         <SwipeableViews
+          axis='y'
           index={index}
-          axis="y"
           enableMouseEvents
+          style={styles.swiper.root}
+          slideStyle={styles.swiper.slide}
           onChangeIndex={this.onChangeIndex}
           {...this.props.swipeableViewsProps}
           onTransitionEnd={this.onTransitionEnd}
-          style={styles.swiper.root}
           containerStyle={styles.swiper.container}
-          slideStyle={styles.swiper.slide}
         >
           <div
-            ref={elt => (this.bodyElt = elt)}
             style={styles.swiper.body}
+            ref={elt => (this.bodyElt = elt)}
             className={`ReactSwipeableBottomSheet--${
-              isOpen ? "open" : "closed"
+              isOpen ? 'open' : 'closed'
             }`}
           >
             {this.props.children}
           </div>
-          <div style={styles.swiper.bottomSlide} />
+          <div style={styles.swiper.bottomSlide}/>
         </SwipeableViews>
-        {shadowTip && !hideShadows && <div style={styles.shadowTip} />}
+        {shadowTip && !hideShadows && <div style={styles.shadowTip}/>}
         {!isOpen && scrollTopAtClose && !hiddenWhenClosed && (
-          <ScrollToTop element={() => this.bodyElt} />
+          <ScrollToTop element={() => this.bodyElt}/>
         )}
       </div>
     )

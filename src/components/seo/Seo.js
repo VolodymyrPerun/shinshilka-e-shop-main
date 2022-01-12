@@ -5,10 +5,10 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import { graphql, useStaticQuery } from 'gatsby'
-import PropTypes from 'prop-types'
 import React from 'react'
 import Helmet from 'react-helmet'
+import PropTypes from 'prop-types'
+import { graphql, useStaticQuery } from 'gatsby'
 
 import Facebook from './Facebook'
 import Twitter from './Twitter'

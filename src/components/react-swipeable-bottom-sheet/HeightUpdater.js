@@ -1,10 +1,10 @@
-import React, { Component } from "react"
-import PropTypes from "prop-types"
+import PropTypes from 'prop-types'
+import React, { Component } from 'react'
 
 class HeightUpdater extends Component {
   constructor(props) {
     super(props)
-    this.globalWindow = typeof window !== "undefined" && window
+    this.globalWindow = typeof window !== 'undefined' && window
 
     this.onWindowResize = this.onWindowResize.bind(this)
   }
@@ -17,12 +17,12 @@ class HeightUpdater extends Component {
   }
 
   componentWillMount() {
-    typeof window !== "undefined" &&
-      window.addEventListener("resize", this.onWindowResize)
+    typeof window !== 'undefined' &&
+    window.addEventListener('resize', this.onWindowResize)
   }
 
   componentWillUnmount() {
-    this.globalWindow.removeEventListener("resize", this.onWindowResize)
+    this.globalWindow.removeEventListener('resize', this.onWindowResize)
   }
 
   render() {
