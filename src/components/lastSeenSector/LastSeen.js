@@ -37,7 +37,6 @@ const Products = ({ title, product, toggleProduct }) => {
             md='4'
             sm='6'
             xs='6'
-            key={product.id}
             product={product}
             addProduct={toggleProduct}
           />
