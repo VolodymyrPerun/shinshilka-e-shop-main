@@ -1,10 +1,19 @@
-import React from 'react'
 import { Link } from 'gatsby'
+import React from 'react'
 import { Col, Container, Row } from 'reactstrap'
 //
 import './Footer.css'
 
 export default function Footer() {
+  let numberOfVisitors = localStorage.getItem('on_load_counter')
+
+  if (numberOfVisitors === null) {
+    numberOfVisitors = 0
+  }
+  numberOfVisitors++
+
+  localStorage.setItem('on_load_counter', numberOfVisitors)
+
   return (
     <footer className='footer-section'>
       <Container>
@@ -62,12 +71,18 @@ export default function Footer() {
       <div className='copyright-reserved'>
         <div className='container'>
           <div className='row'>
-            <div className='col-lg-12'>
+            <div style={{ display: 'flex', justifyContent: 'space-between' }} className='col-lg-12'>
               <div className='copyright-text'>
                 Copyright © {new Date().getFullYear()} All rights reserved. Developed by:
                 <a className='copyright-email'
                    href='mailto:volodimirperun007@gmail.com'> volodimirperun007@gmail.com</a>
               </div>
+              <h5 style={{ fontStyle: 'italic', fontSize: '14' }} className='copyright-text'>
+                Нас вже переглянуло:<span
+                style={{ color: '#e67300' }}> {numberOfVisitors} </span>{
+                (numberOfVisitors % 10 === 1) ? 'користувач' : 'користувачів'
+              }
+              </h5>
             </div>
           </div>
         </div>
